@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SVG Polygon test</title>
+    <style>
+      :root {
+        --dark-color: #635bff;
+        --light-color: #43c4ed;
+      }
+      svg {
+        cursor: pointer;
+      }
+      #DarkP {
+        fill: var(--dark-color);
+      }
+      #LightP {
+        fill: var(--light-color);
+      }
+
+      #darkP-1,
+      #darkP-2,
+      #lightP-1 {
+        transition: all 1s ease;
+      }
+      #darkP-2 {
+        transform: translateX(-100%);
+      }
+      svg:hover #lightP-1 {
+        transform: translateX(20%);
+      }
+      svg:hover #darkP-1 {
+        transform: translateX(40%);
+        opacity: 0;
+      }
+      svg:hover #darkP-2 {
+        transform: translateX(0%);
+      }
+    </style>
+  </head>
+  <body>
+    <svg
+      width="120"
+      height="100"
+      viewBox="0 0 120 100"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g id="triangles" clip-path="url(#clip0_0_1)">
+        <rect width="120" height="100" fill="white" />
+        <g id="LightP">
+          <path
+            id="lightP-1"
+            opacity="0.7"
+            d="M43.031 48.2716C44.3653 49.0398 44.3677 50.9643 43.0353 51.7357L8.55982 71.6967C7.22744 72.4682 5.55959 71.508 5.5577 69.9684L5.5087 30.1312C5.5068 28.5916 7.17228 27.6273 8.50656 28.3955L43.031 48.2716Z"
+          />
+        </g>
+        <g id="DarkP">
+          <path
+            id="darkP-1"
+            opacity="0.7"
+            d="M59.0267 48.2716C60.3609 49.0398 60.3633 50.9643 59.0309 51.7357L24.5554 71.6967C23.2231 72.4682 21.5552 71.508 21.5533 69.9684L21.5043 30.1312C21.5024 28.5916 23.1679 27.6273 24.5022 28.3955L59.0267 48.2716Z"
+          />
+          <path
+            id="darkP-2"
+            opacity="0.7"
+            d="M43.031 48.2716C44.3653 49.0398 44.3677 50.9643 43.0353 51.7357L8.55981 71.6967C7.22742 72.4682 5.55957 71.508 5.55768 69.9684L5.50868 30.1312C5.50679 28.5916 7.17227 27.6273 8.50655 28.3955L43.031 48.2716Z"
+          />
+        </g>
+      </g>
+      <defs>
+        <clipPath id="clip0_0_1">
+          <rect width="120" height="100" fill="white" />
+        </clipPath>
+      </defs>
+    </svg>
+    <script>
+      const svg = document.getElementById('triangles');
+
+      svg.onclick = (e) => {
+        const colors = ['red', 'blue', 'green', 'orange', 'pink'];
+        const rando = () => colors[Math.floor(Math.random() * colors.length)];
+        document.documentElement.style.cssText = `
+       --dark-color: ${rando()};
+       --light-color: ${rando()};
+       `;
+      };
+    </script>
+  </body>
+</html>
