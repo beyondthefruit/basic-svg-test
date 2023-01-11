@@ -5,52 +5,203 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Test Origami SVGt</title>
-    <style></style>
+    <style>
+      /* #wing:hover path {
+        transition: d 4s;
+        d: path(
+          'M211 222.743L300.825 308.476V222.743L285.291 91M300.825 222.743L252 178.743ZM300.825 222.743V308.476L456.165 285.175L293.058 129.835M300.825 308.476L211 222.743Z'
+        );
+      } */
+      #wing {
+        animation: chickenwing 4s ease infinite;
+        transform-box: fill-box;
+        transform-style: preserve-3d;
+      }
+      @keyframes chickenwing {
+        0%,
+        100% {
+          /* transform: skewY(0deg); */
+          /* transform: rotate(0deg); */
+          /* transform: rotateX(0deg); */
+          /* transform-origin: right;
+          transform: translate3d(0px, 0%, 0em); */
+          /* transform: translateX(0) translateY(0) rotateY(0deg) rotateX(00deg); */
+          /* transform: rotateZ(0deg); */
+          /* transform-origin: 85% 85%; */
+          /* d: path(
+            'M302.913 62.1359L189 109L209.709 225.243M189 109L170.874 23.301ZM189 109L264.078 77.6699L170.874 23.301L23.301 77.6699L202.16 187.5M170.874 23.301L264.078 77.6699Z'
+          ); */
+          /* transform: rotate(0deg); */
+          /* transform: rotate3d(1, 2, 3, 0deg); */
+
+          /* transform: rotate(0deg) translate(0px, 0px); */
+        }
+        50% {
+          /* transform: skewY(30deg); */
+          /* transform: rotate(90deg); */
+          /* transform: rotateX(40deg); */
+          /* transform-origin: right;
+              transform: translateX(0) translateY(0) rotateY(0deg) rotateX(00deg);
+          /* transform: rotateZ(0deg); */
+          /* transform-origin: 85% 85%;
+          transform: translateX(0) translateY(0) rotateY(160deg) rotateX(0deg); */
+          /* transform: rotateZ(180deg); */
+          /* d: path(
+            'M211 222.743L300.825 308.476V222.743L285.291 91M300.825 222.743L252 178.743ZM300.825 222.743V308.476L456.165 285.175L293.058 129.835M300.825 308.476L211 222.743Z'
+          ); */
+
+          /* transform: rotate(10deg); */
+          /* transform: rotate3d(12, 4, 4, 30deg); */
+
+          /* transform: rotate(45deg) translate(24px, 25px); */
+        }
+      }
+    </style>
   </head>
   <body>
     <div class="container">
       <svg
+        id="bird"
+        width="400"
+        height="400"
+        viewBox="0 0 600 600"
         fill="none"
-        height="436"
-        viewBox="0 0 405 436"
-        width="405"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <path d="m0 0h405v436h-405z" fill="#1e1e1e" />
-        <path
-          d="m249.709 106.136-62.136 38.835 11.65 58.252 11.651 58.253m-23.301-116.505 57.427 31.029zm0 0 7.767-100.971-155.34 23.301 163.107 155.34m-7.767-178.641 54.369 62.136z"
-          fill="#d9d9d9"
-          fill-opacity=".9"
-        />
-        <g stroke="#808080">
+        <g id="head">
           <path
-            d="m187.573 144.971 62.136-38.835-54.369-62.136m-7.767 100.971 57.427 31.029m-57.427-31.029 7.767-100.971m-7.767 100.971 11.65 58.252 11.651 58.253m-15.534-217.476-155.34 23.301 163.107 155.34"
-            stroke-width=".776699"
-          />
-          <path
-            d="m287.379 43.767 38.835 46.6019-31.068-15.5339z"
-            fill="#fbf9f9"
+            d="M287.379 7.767L326.214 54.3689L295.146 38.835L287.379 7.767Z"
+            fill="#D9D9D9"
+            stroke="#808080"
             stroke-width="1.5534"
-          />
+          >
+            <animate attributeName="d"
+                attributeType="XML"
+             repeatCount="indefinite"
+             dur="3s"
+             values="M287.379 7.767L326.214 54.3689L295.146 38.835L287.379 7.767Z; M287.379 7.767L323 38.835H295.146L287.379 7.767Z" fill="#D9D9D9" stroke="#808080"
+>
+          </path>
+        </g>
+        <g id="wingback">
           <path
-            d="m287.379 43.767-62.136 31.068-116.505 194.175 100.971-7.767 93.204-163.1071z"
-            fill="#d9d9d9"
-            fill-opacity=".95"
-            stroke-width="1.5534"
-          />
+            d="M284 93.5L194.175 7.767V93.5L209.709 225.243M194.175 93.5L243 137.5ZM194.175 93.5V7.767L38.835 31.068L201.942 186.408M194.175 7.767L284 93.5Z"
+      
+            fill="#D9D9D9"
+            stroke="#808080"
+            stroke-width="0.776699"
+          >
+              <path attributeName="d"
+             attributeType="XML"
+             repeatCount="indefinite"
+ 
+             dur="3s"
+             values="
+           M284 93.5L216 56L194.175 93.5L209.709 225.243M194.175 93.5L243 137.5ZM194.175 93.5L216 56L136 111L201.942 186.408M216 56L284 93.5Z;
+      M302.913 62.1359L202 125L209.709 225.243M202 125H269ZM202 125L278 77.6554L269 125V198L206.537 184M269 125L278 77.6554Z;
+           M120.262 232.976L179 262L211.478 237.612L194.553 101.233M211.478 237.612L161.262 188.976ZM211.478 237.612L179 262L237 272L243 237.612L202.32 140.068M179 262L120.262 232.976Z;
+          M120.262 232.976L186 290L211.478 237.612L194.553 101.233M211.478 237.612L161.262 188.976ZM211.478 237.612L186 290L254 346L243 237.612L202.32 140.068M186 290L120.262 232.976Z;
+                                 "
+>
+        </path>
         </g>
         <path
-          d="m302.913 98.1359-116.505 46.6021 23.301 116.505m-23.301-116.505 69.903 37.281zm0 0-15.534-85.437-147.573 54.369 178.641 108.738m-31.068-163.107 93.204 54.369z"
-          fill="#d9d9d9"
-          fill-opacity=".9"
-        />
-        <path
-          d="m302.913 98.1359-116.505 46.6021 23.301 116.505m-23.301-116.505 69.903 37.281m-69.903-37.281-15.534-85.437-147.573 54.369 178.641 108.738m-31.068-163.107 93.204 54.369"
+          id="body"
+          d="M287.379 7.767L225.243 38.835L108.738 233.01L209.709 225.243L302.913 62.1359L287.379 7.767Z"
+          fill="#D9D9D9"
           stroke="#808080"
           stroke-width="1.5534"
         />
+     
+        <g id="wing">
+          <path
+            d="M302.913 62.1359L189 109L209.709 225.243M189 109L170.874 23.301ZM189 109L264.078 77.6699L170.874 23.301L23.301 77.6699L202.16 187.5M170.874 23.301L264.078 77.6699Z"
+            d2="M211 225.107L324.913 178.243L304.204 62M324.913 178.243L343.039 263.942ZM324.913 178.243L249.835 209.573L343.039 263.942L490.612 209.573L311.752 99.7427M343.039 263.942L249.835 209.573Z"
+            fill="#D9D9D9"
+            stroke="#808080"
+            stroke-width="1.5534"
+          >
+            <animate attributeName="d"
+                attributeType="XML"
+             repeatCount="indefinite"
+
+             dur="3s"
+             values="
+             M302.913 62.1359L189 109L209.709 225.243M189 109L170.874 23.301ZM189 109L264.078 77.6699L170.874 23.301L23.301 77.6699L202.16 187.5M170.874 23.301L264.078 77.6699Z;
+             M302.913 62.1359L231 133L209.709 225.243M231 133L209.709 89ZM231 133L278 86.6853L209.709 89L141 143L218.305 188M209.709 89L278 86.6853Z;
+
+          M302.592 65L312.592 107L285 161.625L209 226.625M285 161.625L329 123ZM285 161.625L312.592 107L329 123V219L241 199.256M329 123L312.592 107Z;
+
+           
+
+         
+
+     M304.592 63.5L314.592 105.5L331 177.125L211 225.125M331 177.125L377 160.125ZM331 177.125L314.592 105.5L377 160.125L411 303L261 205.125M377 160.125L314.592 105.5Z                                "
+>
+          </path>
+        </g>
       </svg>
     </div>
-    <script></script>
+    <script>
+      // const wingi = document.getElementById('wing')
+      // const fuckingpiaf = (diabolicus)=>{
+      //   for (i = 0; i < 60; i++){
+      //  wingi.setAttribute('d', )}
+      //  // window.onload = function () {
+      //   var bird = Snap('#bird');
+      //   var duration = 800;
+      //   var bird = Snap.select('#bird');
+      //   bird.append(window);
+      //   var parts = ['wingback', 'head', 'body', 'wing'];
+      //   var elements = [];
+      //   var w = bird.attr('width');
+      //   var h = bird.attr('height');
+      //   // var duration = 800;
+      //   // var bird = Snap.select('#bird');
+      //   // bird.append();
+      //   // var parts = ['wingback', 'head', 'body', 'wing'];
+      //   // var elements = [];
+      //   // var w = bird.attr('width');
+      //   // var h = bird.attr('height');
+
+      //   for (i = 0; i < parts.length; i++) {
+      //     var element = bird.select('#' + parts[i]);
+      //     element.attr('d1', element.attr('d'));
+      //     elements.push(element);
+      //   }§
+
+      //   var anim1 = function () {
+      //     bird.stop().animate({ height: h * 0.85 }, duration, mina.easeinout);
+      //     for (i = 0; i < elements.length; i++) {
+      //       elements[i].stop().animate(
+      //         {
+      //           d: elements[i].attr('d2'),
+      //         },
+      //         duration,
+      //         mina.easeinout,
+      //         anim2
+      //       );
+      //     }
+      //   };
+
+      //   var anim2 = function () {
+      //     bird
+      //       .stop()
+      //       .animate({ width: w, height: h }, duration, mina.easeinout);
+      //     for (i = 0; i < elements.length; i++) {
+      //       elements[i].stop().animate(
+      //         {
+      //           d: elements[i].attr('d1'),
+      //         },
+      //         duration,
+      //         mina.easeinout,
+      //         anim1
+      //       );
+      //     }
+      //   };
+
+      //   anim1();
+      // };
+    </script>
   </body>
 </html>
